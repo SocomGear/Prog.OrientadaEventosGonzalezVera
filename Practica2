@@ -1,0 +1,49 @@
+                                                    Form1.vb
+
+Public Class Form1
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        End
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        TextBox1.Text = String.Empty
+        TextBox2.Text = String.Empty
+        TextBox3.Text = String.Empty
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim valor1 = TextBox1.Text
+        Dim valor2 = TextBox2.Text
+        Dim Resultado As Integer
+        Dim Operador As String
+
+        Operador = ComboBox1.SelectedItem.ToString()
+
+        If Operador = "Suma" Then
+            Resultado = Convert.ToInt32(valor1) + Convert.ToInt32(valor2)
+            MessageBox.Show(Resultado)
+            TextBox3.Text = Resultado
+        End If
+
+        If Operador = "Resta" Then
+            Resultado = Convert.ToInt32(valor1) - Convert.ToInt32(valor2)
+            MessageBox.Show(Resultado)
+            TextBox3.Text = Resultado
+        End If
+
+        If Operador = "Multiplicación" Then
+            Resultado = Convert.ToInt32(valor1) + Convert.ToInt32(valor2)
+            MessageBox.Show(Resultado)
+            TextBox3.Text = Resultado
+        End If
+
+        If Operador = "División" Then
+            Resultado = Convert.ToInt32(valor1) + Convert.ToInt32(valor2)
+            MessageBox.Show(Resultado)
+            TextBox3.Text = Resultado
+        End If
+    End Sub
+
+End Class
