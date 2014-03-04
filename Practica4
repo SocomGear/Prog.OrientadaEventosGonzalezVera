@@ -1,0 +1,114 @@
+
+                                                    Form 1.vb
+
+Public Class Form1
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim Numero As String = ""
+        For i As Integer = 5 To 100
+            Numero += i.ToString() & ","
+            MessageBox.Show(i)
+            i = i + 4
+        Next
+        TextBox1.Text = Numero.ToString()
+    End Sub
+End Class
+
+
+                                                    Form2.vb
+                          
+ Public Class Form2
+                          
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim Contador As Integer
+        For Contador = 1 To 5
+            CheckedListBox1.Items.Add(Contador)
+        Next
+    End Sub
+End Class
+
+
+                                                      Form3.vb
+
+Public Class Form3
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim i As Integer
+        'Llenamos el List 1
+        'Incremental
+        For i = 0 To 100 Step 5
+            Me.ListBox1.Items.Add(i)
+        Next i
+        'Llenamos el List 2
+        'Decremental
+        For i = 100 To 0 Step -5
+            Me.ListBox2.Items.Add(i)
+        Next i
+    End Sub
+End Class
+
+                                                        Form4.vb
+
+Public Class Form4
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        For i As Integer = 1 To 10
+            TextBox2.Text += TextBox1.Text & "*" & i & "=" & CInt(TextBox1.Text) * i & Microsoft.VisualBasic.vbCrLf & " "
+
+        Next
+
+    End Sub
+End Class
+
+                                                    Form5.vb
+                                                    
+Public Class Form5
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim dato As Integer
+        Dim resultado As Integer
+        dato = TextBox1.Text
+        For i = 1 To 10
+            resultado = dato * i
+            ListBox1.Items.Add(TextBox1.Text & "*" & i & "=" & CInt(TextBox1.Text) * i & Microsoft.VisualBasic.vbCrLf & " ")
+
+        Next
+    End Sub
+End Class
+                                                    Form6.vb
+
+Public Class Form6
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim num As Integer
+        Dim i, a As Integer
+
+        num = Val(InputBox("Digite un numero"))
+
+        For i = 1 To 10 Step 1
+            a = num * 1
+            MsgBox("Tabla de Multiplicar" & num & "*" & i & "=" & a)
+
+        Next
+
+    End Sub
+End Class
+
+                                                    Form7.vb
+
+Public Class Form7
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim valor As Integer
+        Dim factorial As Long
+
+        valor = Val(TextBox1.Text)
+        factorial = 1
+
+        For i = 1 To valor Step 1
+            factorial = factorial * i
+        Next
+        TextBox2.Text = factorial.ToString
+    End Sub
+End Class
+
