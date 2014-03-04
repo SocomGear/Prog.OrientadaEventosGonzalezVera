@@ -1,0 +1,49 @@
+
+                                                    Form1.vb
+
+Public Class Form1
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Button2.Enabled = False
+        Button3.Enabled = False
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+       
+        If TextBox1.Text.Trim = "" Then
+            Exit Sub
+        End If
+
+        Button1.Enabled = True
+        Dim fact As Integer = 1
+        Dim num As Integer
+
+        num = TextBox1.Text
+
+        If num = 0 Or num = 1 Then
+            Label1.Text = 1
+        Else
+            For inicio As Integer = 1 To num Step 1
+                fact = fact * inicio
+            Next
+            Label1.Text = "El factorial es " & fact
+            Button2.Enabled = True
+            Button3.Enabled = True
+
+        End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        End
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Button2.Enabled = False
+        Button3.Enabled = False
+        TextBox1.Clear()
+        Label1.Text = ""
+
+
+    End Sub
+End Class
