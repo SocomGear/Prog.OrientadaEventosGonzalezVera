@@ -1,0 +1,76 @@
+
+                                                          Form1.vb
+Public Class Form1
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Form2.Show()
+
+    End Sub
+End Class
+
+
+                                                        Form2.vb
+
+Public Class Form2
+    Dim Usuario1 As String = "Alejandro"
+    Dim Password1 As String = "123"
+    Dim Usuario2 As String = "Nathali"
+    Dim Password2 As String = "321"
+    Dim cont As String
+
+    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        If Usuario1.Equals(TextBox1.Text) And Password1 = Val(TextBox2.Text) Then
+            MsgBox("Tus datos son correctos, Bienvenido!!")
+            Me.Hide()
+            Form3.Show()
+            Form3.Label1.Text = "Bienvenido(a)"
+            Form3.Label2.Text = Usuario1
+
+        Else
+
+
+            If Usuario2.Equals(TextBox1.Text) And Password2 = Val(TextBox2.Text) Then
+                MsgBox("Tus datos son correctos, Bienvenido!!")
+                Me.Hide()
+                Form3.Show()
+                Form3.Label1.Text = "Bienvenido(a)"
+                Form3.Label2.Text = Usuario2
+            Else
+                MsgBox("Verifica tus datos, por favor!, Te quedan  " & 2 - cont & " oportunidades")
+                TextBox1.Clear()
+                TextBox2.Clear()
+                cont = cont + 1
+
+
+                If cont > 2 Then
+                    MsgBox("Excediste el numero de oportunidades, Adios!!")
+                    Me.Close()
+                End If
+            End If
+        End If
+        TextBox1.Clear()
+        TextBox2.Clear()
+    End Sub
+End Class
+
+                                                    Form3.vb
+
+Public Class Form3
+
+    Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+End Class
