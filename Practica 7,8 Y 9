@@ -1,7 +1,490 @@
-Form1.vb
-Form1.vb
-Form1.vb
-Form1.vb
-Form1.vb
-Form1.vb
-Form1.vb
+
+                                                  Form1.vb
+
+Public Class Form1
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.WindowState = FormWindowState.Maximized
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Timer1.Start()
+        Button1.Enabled = False
+        Label2.Text = "Cargando el sistema"
+
+    End Sub
+
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        ProgressBar1.Increment(1)
+        If ProgressBar1.Value = 10 Then
+            Label3.Text = "Accediendo"
+        End If
+        If ProgressBar1.Value = 20 Then
+            Label3.Text = ".Accediend."
+        End If
+        If ProgressBar1.Value = 30 Then
+            Label3.Text = "..Accedien.."
+        End If
+        If ProgressBar1.Value = 40 Then
+            Label3.Text = "...Accedie..."
+        End If
+        If ProgressBar1.Value = 50 Then
+            Label3.Text = "....Accedi...."
+        End If
+        If ProgressBar1.Value = 60 Then
+            Label3.Text = ".....Acced....."
+        End If
+        If ProgressBar1.Value = 70 Then
+            Label3.Text = "......Acce......"
+        End If
+        If ProgressBar1.Value = 80 Then
+            Label3.Text = ".......Acc......."
+        End If
+        If ProgressBar1.Value = 90 Then
+            Label3.Text = "........Ac........"
+        End If
+        If ProgressBar1.Value = 95 Then
+            Label3.Text = ".........A........."
+        End If
+        If ProgressBar1.Value = 98 Then
+            Label3.Text = "...................."
+        End If
+        If ProgressBar1.Value = ProgressBar1.Maximum Then
+            Timer1.Stop()
+            Label3.Text = "Completado"
+            MsgBox("Tu carga fue exitosa")
+            Button1.Enabled = True
+            Me.Hide()
+            Form2.Show()
+        End If
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs)
+
+    End Sub
+End Class
+
+
+Form2.vb
+
+Public Class Form2
+
+    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TextBox1.ForeColor = Color.DarkMagenta
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If TextBox1.Text = Nothing Then
+            MsgBox("Debes ingresar tus datos para continuar", MsgBoxStyle.Critical)
+        Else
+            MsgBox("Tus datos se han almacenado correctamente")
+
+            If ComboBox1.Text = "Computacion" Then
+                Me.Hide()
+                Form3.Show()
+                Form3.Label3.Text = TextBox1.Text
+                Form3.Label1.Text = ComboBox1.Text
+                Form3.Label4.Text = ComboBox2.Text
+            End If
+            If ComboBox1.Text = "Español" Then
+                Me.Hide()
+                Form5.Show()
+                Form5.Label3.Text = TextBox1.Text
+                Form5.Label1.Text = ComboBox1.Text
+                Form5.Label4.Text = ComboBox2.Text
+            End If
+
+            If ComboBox1.Text = "Matematicas" Then
+                Me.Hide()
+                Form6.Show()
+                Form6.Label3.Text = TextBox1.Text
+                Form6.Label1.Text = ComboBox1.Text
+                Form6.Label4.Text = ComboBox2.Text
+            End If
+        End If
+
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+            PictureBox1.Image = Image.FromFile(OpenFileDialog1.FileName)
+            Form4.PictureBox1.Image = Image.FromFile(OpenFileDialog1.FileName)
+
+        End If
+
+    End Sub
+End Class
+
+                                                    Form3.vb
+
+Public Class Form3
+
+    
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Label9.Text = "1"
+        Button2.Enabled = False
+        Button3.Enabled = False
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Label9.Text = "0"
+        Button1.Enabled = False
+        Button3.Enabled = False
+    End Sub
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Label9.Text = "0"
+        Button1.Enabled = False
+        Button2.Enabled = False
+
+    End Sub
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Label10.Text = "0"
+        Button5.Enabled = False
+        Button6.Enabled = False
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Label10.Text = "1"
+        Button4.Enabled = False
+        Button6.Enabled = False
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Label10.Text = "0"
+        Button4.Enabled = False
+        Button5.Enabled = False
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Label14.Text = "1"
+        Button8.Enabled = False
+        Button9.Enabled = False
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Label14.Text = "0"
+        Button7.Enabled = False
+        Button9.Enabled = False
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Label14.Text = "0"
+        Button7.Enabled = False
+        Button8.Enabled = False
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Label17.Text = "1"
+        Button11.Enabled = False
+        Button12.Enabled = False
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        Label17.Text = "0"
+        Button10.Enabled = False
+        Button12.Enabled = False
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        Label17.Text = "0"
+        Button10.Enabled = False
+        Button11.Enabled = False
+    End Sub
+
+    Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
+        Label18.Text = "0"
+        Button14.Enabled = False
+        Button15.Enabled = False
+    End Sub
+
+    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+        Label18.Text = "0"
+        Button13.Enabled = False
+        Button15.Enabled = False
+    End Sub
+
+    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+        Label18.Text = "1"
+        Button13.Enabled = False
+        Button14.Enabled = False
+    End Sub
+
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        Dim num1 As Single
+        Dim num2 As Single
+        Dim num3 As Single
+        Dim num4 As Single
+        Dim num5 As Single
+        num1 = Label9.Text
+        num2 = Label10.Text
+        num3 = Label14.Text
+        num4 = Label17.Text
+        num5 = Label18.Text
+
+        Form4.Label2.Text = Label1.Text
+        Form4.Label3.Text = Label3.Text
+        Form4.Label4.Text = Label4.Text
+        Form4.Label5.Text = Form2.ComboBox3.Text
+        Form4.Label7.Text = (num1 + num2 + num3 + num4 + num5) * 2
+
+
+        Form4.Show()
+        Me.Hide()
+    End Sub
+End Class
+
+                                                      Form4.vb
+
+Public Class Form4
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        End
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+    End Sub
+End Class
+
+
+                                                  Form5.vb
+
+Public Class Form5
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        Label9.Text = "1"
+        CheckBox2.Enabled = False
+        CheckBox3.Enabled = False
+    End Sub
+
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+        Label9.Text = "0"
+        CheckBox1.Enabled = False
+        CheckBox3.Enabled = False
+    End Sub
+
+    Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
+        Label9.Text = "0"
+        CheckBox1.Enabled = False
+        CheckBox2.Enabled = False
+    End Sub
+
+    Private Sub CheckBox4_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox4.CheckedChanged
+        Label10.Text = "0"
+        CheckBox5.Enabled = False
+        CheckBox6.Enabled = False
+    End Sub
+
+    Private Sub CheckBox5_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox5.CheckedChanged
+        Label10.Text = "1"
+        CheckBox4.Enabled = False
+        CheckBox6.Enabled = False
+    End Sub
+
+    Private Sub CheckBox6_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox6.CheckedChanged
+        Label10.Text = "0"
+        CheckBox4.Enabled = False
+        CheckBox5.Enabled = False
+    End Sub
+
+    Private Sub CheckBox7_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox7.CheckedChanged
+        Label14.Text = "1"
+        CheckBox8.Enabled = False
+        CheckBox9.Enabled = False
+    End Sub
+
+    Private Sub CheckBox8_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox8.CheckedChanged
+        Label14.Text = "0"
+        CheckBox7.Enabled = False
+        CheckBox9.Enabled = False
+    End Sub
+
+    Private Sub CheckBox9_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox9.CheckedChanged
+        Label14.Text = "0"
+        CheckBox7.Enabled = False
+        CheckBox8.Enabled = False
+    End Sub
+
+    Private Sub CheckBox10_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox10.CheckedChanged
+        Label17.Text = "0"
+        CheckBox11.Enabled = False
+        CheckBox12.Enabled = False
+    End Sub
+
+    Private Sub CheckBox11_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox11.CheckedChanged
+        Label17.Text = "1"
+        CheckBox10.Enabled = False
+        CheckBox12.Enabled = False
+    End Sub
+
+    Private Sub CheckBox12_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox12.CheckedChanged
+        Label17.Text = "0"
+        CheckBox10.Enabled = False
+        CheckBox11.Enabled = False
+    End Sub
+
+    Private Sub CheckBox13_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox13.CheckedChanged
+        Label18.Text = "0"
+        CheckBox14.Enabled = False
+        CheckBox15.Enabled = False
+    End Sub
+
+    Private Sub CheckBox14_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox14.CheckedChanged
+        Label18.Text = "0"
+        CheckBox13.Enabled = False
+        CheckBox15.Enabled = False
+    End Sub
+
+    Private Sub CheckBox15_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox15.CheckedChanged
+        Label18.Text = "1"
+        CheckBox13.Enabled = False
+        CheckBox14.Enabled = False
+    End Sub
+
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        Dim num1 As Single
+        Dim num2 As Single
+        Dim num3 As Single
+        Dim num4 As Single
+        Dim num5 As Single
+        num1 = Label9.Text
+        num2 = Label10.Text
+        num3 = Label14.Text
+        num4 = Label17.Text
+        num5 = Label18.Text
+
+        Form4.Label2.Text = Label1.Text
+        Form4.Label3.Text = Label3.Text
+        Form4.Label4.Text = Label4.Text
+        Form4.Label5.Text = Form2.ComboBox3.Text
+        Form4.Label7.Text = (num1 + num2 + num3 + num4 + num5) * 2
+
+
+        Form4.Show()
+        Me.Hide()
+    End Sub
+End Class
+                  
+                                                  Form6.vb
+
+Public Class Form6
+
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+        Label9.Text = "0"
+        RadioButton2.Enabled = False
+        RadioButton3.Enabled = False
+    End Sub
+
+    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+        Label9.Text = "0"
+        RadioButton1.Enabled = False
+        RadioButton3.Enabled = False
+    End Sub
+
+    Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
+        Label9.Text = "1"
+        RadioButton1.Enabled = False
+        RadioButton2.Enabled = False
+    End Sub
+
+    Private Sub RadioButton4_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton4.CheckedChanged
+        Label10.Text = "1"
+        RadioButton5.Enabled = False
+        RadioButton6.Enabled = False
+    End Sub
+
+    Private Sub RadioButton5_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton5.CheckedChanged
+        Label10.Text = "0"
+        RadioButton4.Enabled = False
+        RadioButton6.Enabled = False
+    End Sub
+
+    Private Sub RadioButton6_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton6.CheckedChanged
+        Label10.Text = "0"
+        RadioButton4.Enabled = False
+        RadioButton5.Enabled = False
+    End Sub
+
+    Private Sub RadioButton7_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton7.CheckedChanged
+        Label14.Text = "0"
+        RadioButton8.Enabled = False
+        RadioButton9.Enabled = False
+    End Sub
+
+    Private Sub RadioButton8_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton8.CheckedChanged
+        Label14.Text = "1"
+        RadioButton7.Enabled = False
+        RadioButton9.Enabled = False
+    End Sub
+
+    Private Sub RadioButton9_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton9.CheckedChanged
+        Label14.Text = "0"
+        RadioButton7.Enabled = False
+        RadioButton8.Enabled = False
+    End Sub
+
+    Private Sub RadioButton10_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton10.CheckedChanged
+        Label17.Text = "1"
+        RadioButton11.Enabled = False
+        RadioButton12.Enabled = False
+    End Sub
+
+    Private Sub RadioButton11_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton11.CheckedChanged
+        Label17.Text = "0"
+        RadioButton10.Enabled = False
+        RadioButton12.Enabled = False
+    End Sub
+
+    Private Sub RadioButton12_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton12.CheckedChanged
+        Label17.Text = "0"
+        RadioButton10.Enabled = False
+        RadioButton11.Enabled = False
+    End Sub
+
+    Private Sub RadioButton13_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton13.CheckedChanged
+        Label18.Text = "1"
+        RadioButton14.Enabled = False
+        RadioButton15.Enabled = False
+    End Sub
+
+    Private Sub RadioButton14_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton14.CheckedChanged
+        Label18.Text = "0 "
+        RadioButton13.Enabled = False
+        RadioButton15.Enabled = False
+    End Sub
+
+    Private Sub RadioButton15_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton15.CheckedChanged
+        Label18.Text = "0"
+        RadioButton13.Enabled = False
+        RadioButton14.Enabled = False
+    End Sub
+
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        Dim num1 As Single
+        Dim num2 As Single
+        Dim num3 As Single
+        Dim num4 As Single
+        Dim num5 As Single
+        num1 = Label9.Text
+        num2 = Label10.Text
+        num3 = Label14.Text
+        num4 = Label17.Text
+        num5 = Label18.Text
+
+        Form4.Label2.Text = Label1.Text
+        Form4.Label3.Text = Label3.Text
+        Form4.Label4.Text = Label4.Text
+        Form4.Label5.Text = Form2.ComboBox3.Text
+        Form4.Label7.Text = (num1 + num2 + num3 + num4 + num5) * 2
+
+
+        Form4.Show()
+        Me.Hide()
+    End Sub
+End Class
+
+
