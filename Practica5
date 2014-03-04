@@ -1,0 +1,18 @@
+
+                                                          Form1.vb
+
+Public Class Form1
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim sum As Integer = 0
+        Dim counter As Integer = 0
+
+        Do While sum < 10
+            sum = sum + CInt(TextBox1.Text)
+            counter = counter + 1
+
+        Loop
+        MsgBox("The loop  has run " & CStr(counter) & " times")
+
+    End Sub
+End Class
